@@ -1,0 +1,80 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "$designer": {
+      "name": "AdminBot",
+      "id": "YZptc9"
+    }
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnActivity",
+      "$designer": {
+        "id": "6O3TBr"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "iQHwOZ"
+          },
+          "condition": "turn.activity.text == settings.admin.triggerPhrase",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "j3YMiW"
+              },
+              "activity": "${SendActivity_j3YMiW()}"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "BT7jWt"
+              },
+              "activity": "${SendActivity_BT7jWt()}"
+            },
+            {
+              "$kind": "Microsoft.EndTurn",
+              "$designer": {
+                "id": "lNxiKC"
+              }
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "Idq6ch"
+              },
+              "condition": "turn.activity.value.name == settings.admin.user && turn.activity.value.password == settings.admin.password",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "hJXtQ6"
+                  },
+                  "activity": "${SendActivity_hJXtQ6()}"
+                }
+              ],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "JdH0th"
+                  },
+                  "activity": "${SendActivity_JdH0th()}"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "runOnce": false,
+      "priority": 0,
+      "type": "message"
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
+  "generator": "adminbot.lg"
+}

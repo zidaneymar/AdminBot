@@ -1,0 +1,149 @@
+[import](common.lg)
+
+
+
+
+# SendActivity_j3YMiW()
+- Entering Admin Mode...
+
+
+
+
+
+
+# SendActivity_BT7jWt()
+[Activity
+    Attachments = ${json(LoginCard())}
+]
+
+
+
+
+
+
+# SendActivity_hJXtQ6()
+[Activity
+    Attachments = ${json(MainCard())}
+]
+
+
+
+
+
+
+# SendActivity_JdH0th()
+- Sorry, the name or password is invalid. Please try again.
+
+# LoginCard()
+- ```
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.2",
+    "body": [
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": 2,
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Admin Login",
+                            "weight": "Bolder",
+                            "size": "Medium"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Please Enter your user name and password to login.",
+                            "isSubtle": true,
+                            "wrap": true
+                        },
+                        {
+                            "type": "Input.Text",
+                            "placeholder": "Your User Name",
+                            "id": "name"
+                        },
+                        {
+                            "type": "Input.Text",
+                            "placeholder": "Your Password",
+                            "id": "password"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": 1,
+                    "items": [
+                        {
+                            "type": "Image",
+                            "url": "https://th.bing.com/th/id/OIP.w8q8XhBuAh8sq3ZbpOUwxwHaD4?pid=Api&rs=1"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Login"
+        }
+    ]
+}
+```
+
+# MainCard()
+- ```
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.2",
+    "body": [
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "Image",
+                    "url": "https://tse2-mm.cn.bing.net/th/id/OIP.mmpm-CPzzlr6nKFIgyl2JAHaB4?pid=Api&rs=1"
+                },
+                {
+                    "type": "Container",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Welcome to the Admin portal!",
+                            "fontType": "Default",
+                            "color": "Good"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.ShowCard",
+                    "title": "View Request",
+                    "card": {
+                        "type": "AdaptiveCard"
+                    },
+                    "id": "viewRequest",
+                    "style": "positive"
+                },
+                {
+                    "type": "Action.ShowCard",
+                    "title": "Show Card",
+                    "card": {
+                        "type": "AdaptiveCard"
+                    },
+                    "id": "showCard",
+                    "style": "positive"
+                }
+            ]
+        }
+    ]
+}
+```
